@@ -1,0 +1,63 @@
+/* ZMOD Badge - Can be included on any page */
+:root {
+    --badge-text-color: #ffffff;
+    --badge-bg: rgba(0, 0, 0, 0.7);
+    --badge-hover-bg: #e60000;
+    --badge-font: 'Prompt', Arial, sans-serif;
+    --badge-shadow: 0 2px 10px rgba(0, 0, 0, 0.3);
+    --badge-border: rgba(255, 255, 255, 0.1);
+    --badge-blur: 10px;
+}
+
+.zmod-badge {
+    position: fixed;
+    bottom: 20px;
+    right: 20px;
+    color: var(--badge-text-color);
+    padding: 8px 15px;
+    border-radius: 4px;
+    font-family: var(--badge-font);
+    font-size: 0.85rem;
+    font-weight: 500;
+    z-index: 1000;
+    box-shadow: var(--badge-shadow);
+    border: 1px solid var(--badge-border);
+    letter-spacing: 0.5px;
+    transition: opacity 0.3s ease, transform 0.3s ease, background-color 0.3s ease;
+    cursor: pointer;
+    text-decoration: none;
+    overflow: hidden;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.zmod-badge::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background-color: var(--badge-bg);
+    backdrop-filter: blur(var(--badge-blur));
+    -webkit-backdrop-filter: blur(var(--badge-blur));
+    z-index: -1;
+}
+
+.zmod-badge:hover::before {
+    background-color: var(--badge-hover-bg);
+}
+
+.zmod-badge:hover {
+    transform: translateY(-3px);
+}
+
+@media (max-width: 576px) {
+    .zmod-badge {
+        bottom: 15px;
+        right: 15px;
+        padding: 6px 12px;
+        font-size: 0.75rem;
+    }
+} 

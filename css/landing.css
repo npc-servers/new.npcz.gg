@@ -1,0 +1,512 @@
+/* Landing Page Styles */
+:root {
+    --primary-color: #e60000;
+    --secondary-color: #333333;
+    --text-color: #ffffff;
+    --text-shadow: 0 2px 4px rgba(0, 0, 0, 0.5);
+    --button-shadow: 0 4px 6px rgba(0, 0, 0, 0.3);
+    --title-font: 'TheyPerished', Impact, sans-serif;
+    --body-font: 'Prompt', Arial, sans-serif;
+    --transition-duration: 2s;
+    --popup-bg: rgba(40, 40, 40, 0.85);
+    --popup-border: rgba(80, 80, 80, 0.5);
+    --arrow-spacing: 8px;
+    --store-color: #ff8c00;
+    --store-hover-color: #ffa533;
+    --store-transition: 0.3s ease;
+    --discord-color: #5865F2;
+    --discord-hover-color: #7289da;
+}
+
+body {
+    color: var(--text-color);
+    overflow-x: hidden;
+    font-family: var(--body-font);
+    background-color: #000000;
+}
+
+.landing-container {
+    position: relative;
+    width: 100%;
+    min-height: 100vh;
+    background-color: #000000;
+    overflow: hidden;
+    padding-top: var(--navbar-height, 70px);
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    display: flex;
+    align-items: center;
+}
+
+.landing-background {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    opacity: 0;
+    transition: opacity var(--transition-duration) ease;
+    z-index: 0;
+    will-change: opacity;
+}
+
+.landing-container::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(90deg, 
+        rgba(0, 0, 0, 0.9) 0%, 
+        rgba(0, 0, 0, 0.85) 20%, 
+        rgba(0, 0, 0, 0.7) 40%, 
+        rgba(0, 0, 0, 0.5) 60%, 
+        rgba(0, 0, 0, 0.4) 80%, 
+        rgba(0, 0, 0, 0.3) 100%);
+    z-index: 1;
+}
+
+.content-wrapper {
+    position: relative;
+    width: 100%;
+    max-width: 1600px;
+    margin: 0 auto;
+    padding: 0 2.5rem;
+    z-index: 2;
+}
+
+.text-container {
+    max-width: 800px;
+    margin-left: 3%;
+    opacity: 1;
+}
+
+.logo-container {
+    margin-bottom: 1.5rem;
+    max-width: 100%;
+    display: flex;
+    justify-content: flex-start;
+}
+
+.main-logo {
+    height: auto;
+    display: block;
+    filter: drop-shadow(var(--text-shadow));
+}
+
+.desktop-logo {
+    max-width: 40%;
+}
+
+.mobile-logo {
+    display: none;
+}
+
+.main-title {
+    font-family: var(--title-font);
+    font-size: 3.5rem;
+    font-weight: normal;
+    margin-bottom: 1.5rem;
+    text-shadow: var(--text-shadow);
+    line-height: 1.2;
+    letter-spacing: 1px;
+    white-space: nowrap;
+}
+
+.sub-text {
+    font-family: var(--body-font);
+    font-size: 1.25rem;
+    font-weight: 500;
+    margin-bottom: 2.5rem;
+    text-shadow: var(--text-shadow);
+    opacity: 0.9;
+    line-height: 1.5;
+    letter-spacing: 0.3px;
+}
+
+.button-group {
+    display: flex;
+    gap: 1rem;
+    flex-wrap: wrap;
+    max-width: 100%;
+}
+
+.btn {
+    display: inline-block;
+    padding: 0.75rem 2rem;
+    border-radius: 4px;
+    font-family: var(--body-font);
+    font-weight: 500;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    transition: transform 0.15s ease, background-color 0.3s ease, box-shadow 0.3s ease, opacity 0.15s ease;
+    box-shadow: var(--button-shadow);
+    position: relative;
+    overflow: hidden;
+    z-index: 1;
+    margin-bottom: 0.5rem;
+}
+
+.btn::after {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    z-index: -1;
+    transition: opacity 0.3s ease, filter 0.3s ease;
+    opacity: 0;
+    border-radius: 4px;
+}
+
+/* Primary Button (PLAY NOW) - Standard hover effect */
+.btn-primary {
+    background-color: var(--primary-color);
+    border: 2px solid var(--primary-color);
+}
+
+.btn-primary:hover:not(.btn-clicked) {
+    background-color: transparent;
+    transform: translateY(-3px);
+    box-shadow: 0 0 15px 2px rgba(230, 0, 0, 0.3), 0 4px 6px rgba(0, 0, 0, 0.3);
+}
+
+/* Disable the ::after element for primary button */
+.btn-primary::after {
+    display: none;
+}
+
+/* Secondary Button (LEARN MORE) - Blurred fill effect */
+.btn-secondary {
+    background-color: transparent;
+    border: 2px solid var(--text-color);
+    position: relative;
+}
+
+.btn-secondary:hover:not(.btn-clicked) {
+    transform: translateY(-3px);
+    box-shadow: 0 0 15px 3px rgba(255, 255, 255, 0.3), 0 4px 6px rgba(0, 0, 0, 0.3);
+    border-color: rgba(255, 255, 255, 0.7);
+}
+
+.btn-secondary::after {
+    background-color: var(--text-color);
+    filter: blur(0px);
+}
+
+.btn-secondary:hover:not(.btn-clicked)::after {
+    opacity: 0.3;
+    filter: blur(12px);
+}
+
+.btn-clicked {
+    transform: scale(0.95) !important;
+    opacity: 0.8;
+}
+
+/* Store button with arrow - special design */
+.btn-store {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 0.75rem 1.5rem;
+    white-space: nowrap;
+    background-color: var(--store-color);
+    border: 2px solid var(--store-color);
+    color: var(--text-color);
+    position: relative;
+    overflow: hidden;
+    border-radius: 25px;
+    box-shadow: 0 4px 15px rgba(255, 140, 0, 0.3);
+    font-weight: 600;
+    letter-spacing: 1.2px;
+    transition: all var(--store-transition);
+}
+
+/* Override secondary button styles for store button */
+.btn-secondary.btn-store::after {
+    display: none;
+}
+
+.btn-store::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(45deg, var(--store-color), var(--store-hover-color));
+    opacity: 0;
+    transition: opacity var(--store-transition);
+    z-index: -1;
+}
+
+.btn-store:hover:not(.btn-clicked) {
+    transform: translateY(-3px);
+    background-color: transparent;
+    box-shadow: 0 6px 20px rgba(255, 140, 0, 0.4);
+    border-color: var(--store-hover-color);
+}
+
+.btn-store:hover:not(.btn-clicked)::before {
+    opacity: 1;
+}
+
+.btn-store i.fa-shopping-cart {
+    margin-right: var(--arrow-spacing);
+    font-size: 0.9em;
+}
+
+.btn-store i.fa-arrow-right {
+    margin: 0 var(--arrow-spacing);
+    transition: transform 0.3s ease;
+    font-size: 0.85em;
+    color: var(--text-color);
+}
+
+.btn-store:hover i.fa-arrow-right {
+    transform: translateX(3px);
+}
+
+/* Discord button with icon - special design */
+.btn-discord {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 0.75rem 1.5rem;
+    white-space: nowrap;
+    background-color: var(--discord-color);
+    border: 2px solid var(--discord-color);
+    color: var(--text-color);
+    position: relative;
+    overflow: hidden;
+    border-radius: 25px;
+    box-shadow: 0 4px 15px rgba(88, 101, 242, 0.3);
+    font-weight: 600;
+    letter-spacing: 1.2px;
+    transition: all var(--store-transition);
+}
+
+/* Override secondary button styles for discord button */
+.btn-secondary.btn-discord::after {
+    display: none;
+}
+
+.btn-discord::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(45deg, var(--discord-color), var(--discord-hover-color));
+    opacity: 0;
+    transition: opacity var(--store-transition);
+    z-index: -1;
+}
+
+.btn-discord:hover:not(.btn-clicked) {
+    transform: translateY(-3px);
+    background-color: transparent;
+    box-shadow: 0 6px 20px rgba(88, 101, 242, 0.4);
+    border-color: var(--discord-hover-color);
+}
+
+.btn-discord:hover:not(.btn-clicked)::before {
+    opacity: 1;
+}
+
+.btn-discord i.fa-discord {
+    margin-right: var(--arrow-spacing);
+    font-size: 0.9em;
+}
+
+/* Disabled button for mobile/tablet */
+.btn-primary.disabled {
+    background-color: #888888;
+    border-color: #888888;
+    cursor: not-allowed;
+    opacity: 0.7;
+    box-shadow: none;
+}
+
+.btn-primary.disabled:hover {
+    background-color: #888888;
+    transform: none;
+    box-shadow: none;
+}
+
+/* Responsive styles */
+@media (max-width: 1200px) {
+    .desktop-logo {
+        max-width: 38%;
+    }
+}
+
+@media (max-width: 992px) {
+    .desktop-logo {
+        max-width: 35%;
+    }
+    
+    .content-wrapper {
+        padding: 0 2rem;
+    }
+    
+    .button-group {
+        justify-content: center;
+    }
+    
+    .btn-store {
+        margin-top: 0;
+    }
+}
+
+@media (max-width: 768px) {
+    .desktop-logo {
+        display: none;
+    }
+    
+    .mobile-logo {
+        display: block;
+        max-width: 80%;
+        margin: 0 auto;
+    }
+    
+    .logo-container {
+        justify-content: center;
+    }
+    
+    .sub-text {
+        font-size: 1rem;
+    }
+    
+    .text-container {
+        margin-left: 0;
+        text-align: center;
+        max-width: 100%;
+        padding: 0 1rem;
+    }
+    
+    .button-group {
+        flex-direction: column;
+        align-items: stretch;
+    }
+    
+    .btn {
+        text-align: center;
+        margin-bottom: 0.75rem;
+    }
+    
+    .btn:last-child {
+        margin-bottom: 0;
+    }
+    
+    .content-wrapper {
+        padding: 0 1.5rem;
+    }
+    
+    .landing-container::before {
+        background: linear-gradient(0deg, 
+            rgba(0, 0, 0, 0.95) 0%, 
+            rgba(0, 0, 0, 0.9) 15%, 
+            rgba(0, 0, 0, 0.8) 30%, 
+            rgba(0, 0, 0, 0.7) 45%, 
+            rgba(0, 0, 0, 0.6) 60%, 
+            rgba(0, 0, 0, 0.4) 80%, 
+            rgba(0, 0, 0, 0.3) 100%);
+    }
+    
+    .btn-store, .btn-discord {
+        font-size: 0.9rem;
+        border-radius: 20px;
+        padding: 0.75rem 1.2rem;
+    }
+}
+
+@media (max-width: 576px) {
+    .mobile-logo {
+        max-width: 85%;
+    }
+    
+    .content-wrapper {
+        padding: 0 1rem;
+    }
+}
+
+@media (max-width: 480px) {
+    .mobile-logo {
+        max-width: 90%;
+    }
+    
+    .button-group {
+        flex-direction: column;
+        width: 100%;
+    }
+    
+    .btn {
+        width: 100%;
+        text-align: center;
+        margin-bottom: 0.75rem;
+    }
+    
+    .btn:last-child {
+        margin-bottom: 0;
+    }
+    
+    .btn-store, .btn-discord {
+        font-size: 0.8rem;
+        padding: 0.75rem 1rem;
+    }
+}
+
+@media (max-width: 360px) {
+    .mobile-logo {
+        max-width: 95%;
+    }
+}
+
+/* Popup message styles */
+.popup-message {
+    position: fixed;
+    background-color: var(--popup-bg);
+    color: var(--text-color);
+    padding: 8px 15px;
+    border-radius: 4px;
+    font-family: var(--body-font);
+    font-size: 0.85rem;
+    font-weight: normal;
+    white-space: nowrap;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.4);
+    z-index: 1000;
+    transform: translateY(10px);
+    opacity: 0;
+    transition: transform 0.2s ease, opacity 0.2s ease;
+    pointer-events: none;
+    text-shadow: none;
+    border: 1px solid var(--popup-border);
+    letter-spacing: 0.5px;
+}
+
+.popup-message::after {
+    content: '';
+    position: absolute;
+    bottom: -6px;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 0;
+    height: 0;
+    border-left: 6px solid transparent;
+    border-right: 6px solid transparent;
+    border-top: 6px solid var(--popup-bg);
+}
+
+.popup-message.active {
+    opacity: 0.9;
+    transform: translateY(0);
+} 

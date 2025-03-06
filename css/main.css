@@ -1,0 +1,29 @@
+/* Main CSS File - Consolidated imports */
+@import 'reset.css';
+@import 'fonts.css';
+@import 'landing.css';
+@import 'zmod-badge.css';
+@import 'navbar.css';
+@import 'server-status.css';
+@import 'discord-popup.css';
+
+/* Global Variables */
+:root {
+    /* Common variables across components */
+    --primary-color: #e60000;
+    --secondary-color: #333333;
+    --text-color: #ffffff;
+    --body-font: 'Prompt', Arial, sans-serif;
+}
+
+/* Global Styles */
+body {
+    font-family: var(--body-font);
+    line-height: 1.5;
+    background-color: #000000;
+}
+
+/* Ensure html element also has black background */
+html {
+    background-color: #000000;
+} 

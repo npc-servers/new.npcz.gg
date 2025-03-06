@@ -1,0 +1,185 @@
+/* Navbar Styles */
+:root {
+    --navbar-bg: rgba(20, 20, 20, 0.7);
+    --navbar-text: #ffffff;
+    --navbar-hover: #e60000;
+    --navbar-active: #e60000;
+    --navbar-border: rgba(255, 255, 255, 0.1);
+    --navbar-shadow: 0 2px 10px rgba(0, 0, 0, 0.5);
+    --navbar-font: 'Prompt', Arial, sans-serif;
+    --navbar-transition: 0.3s ease;
+    --navbar-mobile-bg: rgba(30, 30, 30, 0.75);
+    --navbar-height: 60px;
+    --navbar-blur: 10px;
+    --navbar-mobile-blur: 12px;
+    --toggle-bg: rgba(20, 20, 20, 0.7);
+}
+
+/* Main Navbar Container */
+.navbar {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: var(--navbar-height);
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 0 1rem;
+    z-index: 1000;
+    pointer-events: none; /* Allow clicks to pass through the navbar container */
+}
+
+/* Hide the logo since we only want the hamburger */
+.navbar-logo {
+    display: none;
+}
+
+/* Navigation Links */
+.navbar-links {
+    position: fixed;
+    top: 0;
+    right: -100%;
+    width: 70%;
+    max-width: 300px;
+    height: 100vh;
+    background-color: var(--navbar-mobile-bg);
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    gap: 2rem;
+    padding: 2rem;
+    transition: right var(--navbar-transition), backdrop-filter var(--navbar-transition);
+    box-shadow: -5px 0 15px rgba(0, 0, 0, 0.3);
+    border-left: 1px solid var(--navbar-border);
+    backdrop-filter: blur(var(--navbar-mobile-blur));
+    -webkit-backdrop-filter: blur(var(--navbar-mobile-blur));
+    z-index: 1000;
+    pointer-events: auto; /* Enable clicks on the menu */
+}
+
+.navbar-link {
+    color: var(--navbar-text);
+    text-decoration: none;
+    font-family: var(--navbar-font);
+    font-size: 1.1rem;
+    font-weight: 500;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    padding: 0.5rem 0;
+    position: relative;
+    transition: color var(--navbar-transition);
+}
+
+.navbar-link:hover,
+.navbar-link.active {
+    color: var(--navbar-hover);
+}
+
+.navbar-link::after {
+    content: '';
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 0;
+    height: 2px;
+    background-color: var(--navbar-hover);
+    transition: width var(--navbar-transition);
+}
+
+.navbar-link:hover::after,
+.navbar-link.active::after {
+    width: 100%;
+}
+
+/* Mobile Menu Button */
+.navbar-toggle {
+    display: block;
+    background-color: var(--toggle-bg);
+    border: none;
+    cursor: pointer;
+    padding: 0.75rem;
+    z-index: 1001;
+    position: fixed;
+    top: 20px;
+    right: 20px;
+    border-radius: 50%;
+    width: 50px;
+    height: 50px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    box-shadow: var(--navbar-shadow);
+    backdrop-filter: blur(var(--navbar-blur));
+    -webkit-backdrop-filter: blur(var(--navbar-blur));
+    pointer-events: auto; /* Enable clicks on the toggle button */
+    transition: background-color var(--navbar-transition);
+}
+
+.navbar-toggle:hover {
+    background-color: rgba(40, 40, 40, 0.8);
+}
+
+.navbar-toggle span {
+    display: block;
+    width: 25px;
+    height: 2px;
+    background-color: var(--navbar-text);
+    margin: 3px 0;
+    transition: transform var(--navbar-transition), opacity var(--navbar-transition);
+}
+
+/* Overlay for mobile menu */
+.navbar-overlay {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.5);
+    backdrop-filter: blur(3px);
+    -webkit-backdrop-filter: blur(3px);
+    z-index: 999;
+    opacity: 0;
+    visibility: hidden;
+    transition: opacity var(--navbar-transition), visibility var(--navbar-transition);
+    pointer-events: none;
+}
+
+.navbar-overlay.open {
+    opacity: 1;
+    visibility: visible;
+    pointer-events: auto;
+}
+
+.navbar-links.open {
+    right: 0;
+}
+
+.navbar-toggle.open span:nth-child(1) {
+    transform: translateY(8px) rotate(45deg);
+}
+
+.navbar-toggle.open span:nth-child(2) {
+    opacity: 0;
+}
+
+.navbar-toggle.open span:nth-child(3) {
+    transform: translateY(-8px) rotate(-45deg);
+}
+
+/* Smaller screens adjustments */
+@media (max-width: 480px) {
+    .navbar-toggle {
+        width: 45px;
+        height: 45px;
+        top: 15px;
+        right: 15px;
+    }
+    
+    .navbar-links {
+        width: 80%;
+    }
+} 

@@ -1,0 +1,878 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+    <title>Harrison's Homigrad - Rules</title>
+    <link rel="icon" type="image/x-icon" href="hh_logo_square.ico">
+    <link href="https://fonts.googleapis.com/css2?family=Squada+One&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css">
+    <link rel="stylesheet" href="css/rules.css">
+</head>
+<body>
+    <div class="overlay"></div>
+    <a href="index.html" class="back-btn"><i class="fas fa-arrow-left"></i> Back</a>
+    <div class="container">
+        <div class="rules-container">
+            <h1 class="title">SERVER RULES</h1>
+            
+            <div class="quick-links">
+                <a href="https://discord.gg/npc" target="_blank">discord.gg/npc</a>
+                <a href="https://npcz.gg" target="_blank">npcz.gg</a>
+                <a href="/store/index.html" target="_blank">npcz.gg/store</a>
+            </div>
+
+            <!-- Common Sense Rules -->
+            <div class="rule-category">
+                <div class="category-header" onclick="toggleCategory(this)">
+                    <h2>Common Sense</h2>
+                    <i class="fas fa-chevron-down"></i>
+                </div>
+                <div class="category-content">
+                    <div id="no-slurs" class="rule-card">
+                        <div class="rule-header">
+                            <h2 class="rule-title">Slurs</h2>
+                            <div class="rule-actions">
+                                <button class="copy-link" title="Copy link to rule" onclick="copyLink('no-slurs')">
+                                    <i class="fas fa-link"></i>
+                                </button>
+                                <button class="copy-text" title="Copy rule text" onclick="copyText(this)">
+                                    <i class="fas fa-copy"></i>
+                                </button>
+                            </div>
+                        </div>
+                        <div class="rule-description">
+                            No use of homophobic and racial slurs are permitted. Homophobic & Racial slurs are strictly prohibited, no matter the context. Saying/promoting these terms will get you banned.
+                        </div>
+                    </div>
+
+                    <div id="no-harassment" class="rule-card">
+                        <div class="rule-header">
+                            <h2 class="rule-title">Harassment</h2>
+                            <div class="rule-actions">
+                                <button class="copy-link" title="Copy link to rule" onclick="copyLink('no-harassment')">
+                                    <i class="fas fa-link"></i>
+                                </button>
+                                <button class="copy-text" title="Copy rule text" onclick="copyText(this)">
+                                    <i class="fas fa-copy"></i>
+                                </button>
+                            </div>
+                        </div>
+                        <div class="rule-description">
+                            Do not harass or intentionally annoy other players.
+                        </div>
+                    </div>
+
+                    <div id="no-mic-spam" class="rule-card">
+                        <div class="rule-header">
+                            <h2 class="rule-title">Mic Spam</h2>
+                            <div class="rule-actions">
+                                <button class="copy-link" title="Copy link to rule" onclick="copyLink('no-mic-spam')">
+                                    <i class="fas fa-link"></i>
+                                </button>
+                                <button class="copy-text" title="Copy rule text" onclick="copyText(this)">
+                                    <i class="fas fa-copy"></i>
+                                </button>
+                            </div>
+                        </div>
+                        <div class="rule-description">
+                            Mic Spamming/earraping is not allowed.
+                        </div>
+                    </div>
+
+                    <div id="english-only" class="rule-card">
+                        <div class="rule-header">
+                            <h2 class="rule-title">English Only in All-Chat</h2>
+                            <div class="rule-actions">
+                                <button class="copy-link" title="Copy link to rule" onclick="copyLink('english-only')">
+                                    <i class="fas fa-link"></i>
+                                </button>
+                                <button class="copy-text" title="Copy rule text" onclick="copyText(this)">
+                                    <i class="fas fa-copy"></i>
+                                </button>
+                            </div>
+                        </div>
+                        <div class="rule-description">
+                            We are an english speaking server, so keep all-chat in english. You can use other languages in PMs/Near/Squads.
+                        </div>
+                    </div>
+
+                    <div id="no-cheating" class="rule-card">
+                        <div class="rule-header">
+                            <h2 class="rule-title">Cheating/Exploiting</h2>
+                            <div class="rule-actions">
+                                <button class="copy-link" title="Copy link to rule" onclick="copyLink('no-cheating')">
+                                    <i class="fas fa-link"></i>
+                                </button>
+                                <button class="copy-text" title="Copy rule text" onclick="copyText(this)">
+                                    <i class="fas fa-copy"></i>
+                                </button>
+                            </div>
+                        </div>
+                        <div class="rule-description">
+                            Modifying your game to provide an unfair advantage (cheating/exploiting) is against the rules.
+                        </div>
+                    </div>
+
+                    <div id="no-lag" class="rule-card">
+                        <div class="rule-header">
+                            <h2 class="rule-title">Server Disruption</h2>
+                            <div class="rule-actions">
+                                <button class="copy-link" title="Copy link to rule" onclick="copyLink('no-lag')">
+                                    <i class="fas fa-link"></i>
+                                </button>
+                                <button class="copy-text" title="Copy rule text" onclick="copyText(this)">
+                                    <i class="fas fa-copy"></i>
+                                </button>
+                            </div>
+                        </div>
+                        <div class="rule-description">
+                            Intentionally lagging/crashing the server is not allowed.
+                        </div>
+                    </div>
+
+                    <div id="no-dox" class="rule-card">
+                        <div class="rule-header">
+                            <h2 class="rule-title">Doxxing/DDoS</h2>
+                            <div class="rule-actions">
+                                <button class="copy-link" title="Copy link to rule" onclick="copyLink('no-dox')">
+                                    <i class="fas fa-link"></i>
+                                </button>
+                                <button class="copy-text" title="Copy rule text" onclick="copyText(this)">
+                                    <i class="fas fa-copy"></i>
+                                </button>
+                            </div>
+                        </div>
+                        <div class="rule-description">
+                            Threatening or attempting to dox/DDoS other players will result in a permanent ban.
+                        </div>
+                    </div>
+
+                    <div id="no-advertising" class="rule-card">
+                        <div class="rule-header">
+                            <h2 class="rule-title">Advertising</h2>
+                            <div class="rule-actions">
+                                <button class="copy-link" title="Copy link to rule" onclick="copyLink('no-advertising')">
+                                    <i class="fas fa-link"></i>
+                                </button>
+                                <button class="copy-text" title="Copy rule text" onclick="copyText(this)">
+                                    <i class="fas fa-copy"></i>
+                                </button>
+                            </div>
+                        </div>
+                        <div class="rule-description">
+                            Advertising/recruiting in the server (Discord invites, clan recruiting, or server promotion) is not allowed.
+                        </div>
+                    </div>
+
+                    <div id="no-nsfw" class="rule-card">
+                        <div class="rule-header">
+                            <h2 class="rule-title">NSFW Content</h2>
+                            <div class="rule-actions">
+                                <button class="copy-link" title="Copy link to rule" onclick="copyLink('no-nsfw')">
+                                    <i class="fas fa-link"></i>
+                                </button>
+                                <button class="copy-text" title="Copy rule text" onclick="copyText(this)">
+                                    <i class="fas fa-copy"></i>
+                                </button>
+                            </div>
+                        </div>
+                        <div class="rule-description">
+                            NSFW Content is not allowed.
+                        </div>
+                    </div>
+
+                    <div id="no-offensive" class="rule-card">
+                        <div class="rule-header">
+                            <h2 class="rule-title">Offensive Behavior</h2>
+                            <div class="rule-actions">
+                                <button class="copy-link" title="Copy link to rule" onclick="copyLink('no-offensive')">
+                                    <i class="fas fa-link"></i>
+                                </button>
+                                <button class="copy-text" title="Copy rule text" onclick="copyText(this)">
+                                    <i class="fas fa-copy"></i>
+                                </button>
+                            </div>
+                        </div>
+                        <div class="rule-description">
+                            Do not engage in/use offensive behavior or language.
+                        </div>
+                    </div>
+
+                    <div id="no-retaliation" class="rule-card">
+                        <div class="rule-header">
+                            <h2 class="rule-title">Rule Breaking Retaliation</h2>
+                            <div class="rule-actions">
+                                <button class="copy-link" title="Copy link to rule" onclick="copyLink('no-retaliation')">
+                                    <i class="fas fa-link"></i>
+                                </button>
+                                <button class="copy-text" title="Copy rule text" onclick="copyText(this)">
+                                    <i class="fas fa-copy"></i>
+                                </button>
+                            </div>
+                        </div>
+                        <div class="rule-description">
+                            Do not break rules because someone else is breaking them; you will also be punished.
+                        </div>
+                    </div>
+
+                    <div id="no-politics" class="rule-card">
+                        <div class="rule-header">
+                            <h2 class="rule-title">Politics/Sensitive Topics</h2>
+                            <div class="rule-actions">
+                                <button class="copy-link" title="Copy link to rule" onclick="copyLink('no-politics')">
+                                    <i class="fas fa-link"></i>
+                                </button>
+                                <button class="copy-text" title="Copy rule text" onclick="copyText(this)">
+                                    <i class="fas fa-copy"></i>
+                                </button>
+                            </div>
+                        </div>
+                        <div class="rule-description">
+                            Topics about politics, shootings, ongoing wars, illegal content, etc, are highly discouraged, and will result in a punishment by staff.
+                        </div>
+                    </div>
+
+                    <div id="respect-players" class="rule-card">
+                        <div class="rule-header">
+                            <h2 class="rule-title">Respect All Players</h2>
+                            <div class="rule-actions">
+                                <button class="copy-link" title="Copy link to rule" onclick="copyLink('respect-players')">
+                                    <i class="fas fa-link"></i>
+                                </button>
+                                <button class="copy-text" title="Copy rule text" onclick="copyText(this)">
+                                    <i class="fas fa-copy"></i>
+                                </button>
+                            </div>
+                        </div>
+                        <div class="rule-description">
+                            Treat everyone with respect. Excessive Harassment, hate speech, and personal attacks will not be tolerated.
+                        </div>
+                    </div>
+
+                    <div id="follow-admins" class="rule-card">
+                        <div class="rule-header">
+                            <h2 class="rule-title">Follow Admin Instructions</h2>
+                            <div class="rule-actions">
+                                <button class="copy-link" title="Copy link to rule" onclick="copyLink('follow-admins')">
+                                    <i class="fas fa-link"></i>
+                                </button>
+                                <button class="copy-text" title="Copy rule text" onclick="copyText(this)">
+                                    <i class="fas fa-copy"></i>
+                                </button>
+                            </div>
+                        </div>
+                        <div class="rule-description">
+                            Always listen to the admins and moderators. Their word is final.
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Prop Abuse Rules -->
+            <div class="rule-category">
+                <div class="category-header" onclick="toggleCategory(this)">
+                    <h2>Prop Abuse</h2>
+                    <i class="fas fa-chevron-down"></i>
+                </div>
+                <div class="category-content">
+                    <div id="no-griefing" class="rule-card">
+                        <div class="rule-header">
+                            <h2 class="rule-title">Griefing</h2>
+                            <div class="rule-actions">
+                                <button class="copy-link" title="Copy link to rule" onclick="copyLink('no-griefing')">
+                                    <i class="fas fa-link"></i>
+                                </button>
+                                <button class="copy-text" title="Copy rule text" onclick="copyText(this)">
+                                    <i class="fas fa-copy"></i>
+                                </button>
+                            </div>
+                        </div>
+                        <div class="rule-description">
+                            Avoid behavior that disrupts the game experience for others, including excessive mic spam, punching & searching players without valid reason, or other forms of disruptive gameplay.
+                        </div>
+                    </div>
+
+                    <div id="no-prop-push" class="rule-card">
+                        <div class="rule-header">
+                            <h2 class="rule-title">Prop Push/Kill</h2>
+                            <div class="rule-actions">
+                                <button class="copy-link" title="Copy link to rule" onclick="copyLink('no-prop-push')">
+                                    <i class="fas fa-link"></i>
+                                </button>
+                                <button class="copy-text" title="Copy rule text" onclick="copyText(this)">
+                                    <i class="fas fa-copy"></i>
+                                </button>
+                            </div>
+                        </div>
+                        <div class="rule-description">
+                            Do not prop push or prop kill under any circumstances.
+                        </div>
+                    </div>
+
+                    <div id="no-prop-entry" class="rule-card">
+                        <div class="rule-header">
+                            <h2 class="rule-title">Unauthorized Base Entry</h2>
+                            <div class="rule-actions">
+                                <button class="copy-link" title="Copy link to rule" onclick="copyLink('no-prop-entry')">
+                                    <i class="fas fa-link"></i>
+                                </button>
+                                <button class="copy-text" title="Copy rule text" onclick="copyText(this)">
+                                    <i class="fas fa-copy"></i>
+                                </button>
+                            </div>
+                        </div>
+                        <div class="rule-description">
+                            Using props/vehicles to enter peoples bases is not allowed.
+                        </div>
+                    </div>
+
+                    <div id="no-prop-spam" class="rule-card">
+                        <div class="rule-header">
+                            <h2 class="rule-title">Prop Spam</h2>
+                            <div class="rule-actions">
+                                <button class="copy-link" title="Copy link to rule" onclick="copyLink('no-prop-spam')">
+                                    <i class="fas fa-link"></i>
+                                </button>
+                                <button class="copy-text" title="Copy rule text" onclick="copyText(this)">
+                                    <i class="fas fa-copy"></i>
+                                </button>
+                            </div>
+                        </div>
+                        <div class="rule-description">
+                            Do not prop spam, doing this may result in a ban without warning!
+                        </div>
+                    </div>
+
+                    <div id="no-blocking" class="rule-card">
+                        <div class="rule-header">
+                            <h2 class="rule-title">Map Blocking</h2>
+                            <div class="rule-actions">
+                                <button class="copy-link" title="Copy link to rule" onclick="copyLink('no-blocking')">
+                                    <i class="fas fa-link"></i>
+                                </button>
+                                <button class="copy-text" title="Copy rule text" onclick="copyText(this)">
+                                    <i class="fas fa-copy"></i>
+                                </button>
+                            </div>
+                        </div>
+                        <div class="rule-description">
+                            Blocking off large parts of the map, including roads and spawnpoints, is not allowed.
+                        </div>
+                    </div>
+
+                    <div id="no-skybox" class="rule-card">
+                        <div class="rule-header">
+                            <h2 class="rule-title">Skybox Building</h2>
+                            <div class="rule-actions">
+                                <button class="copy-link" title="Copy link to rule" onclick="copyLink('no-skybox')">
+                                    <i class="fas fa-link"></i>
+                                </button>
+                                <button class="copy-text" title="Copy rule text" onclick="copyText(this)">
+                                    <i class="fas fa-copy"></i>
+                                </button>
+                            </div>
+                        </div>
+                        <div class="rule-description">
+                            Do not build in the skybox.
+                        </div>
+                    </div>
+
+                    <div id="no-unauthorized-props" class="rule-card">
+                        <div class="rule-header">
+                            <h2 class="rule-title">Unauthorized Props</h2>
+                            <div class="rule-actions">
+                                <button class="copy-link" title="Copy link to rule" onclick="copyLink('no-unauthorized-props')">
+                                    <i class="fas fa-link"></i>
+                                </button>
+                                <button class="copy-text" title="Copy rule text" onclick="copyText(this)">
+                                    <i class="fas fa-copy"></i>
+                                </button>
+                            </div>
+                        </div>
+                        <div class="rule-description">
+                            Do not spawn props/entities in or on a player's build/base without permission. This includes spawnpoints.
+                        </div>
+                    </div>
+
+                    <div id="no-prop-access" class="rule-card">
+                        <div class="rule-header">
+                            <h2 class="rule-title">Unauthorized Access Methods</h2>
+                            <div class="rule-actions">
+                                <button class="copy-link" title="Copy link to rule" onclick="copyLink('no-prop-access')">
+                                    <i class="fas fa-link"></i>
+                                </button>
+                                <button class="copy-text" title="Copy rule text" onclick="copyText(this)">
+                                    <i class="fas fa-copy"></i>
+                                </button>
+                            </div>
+                        </div>
+                        <div class="rule-description">
+                            Do not use props or balloons to gain access to a player's build/base. Propflying for map traversal is allowed.
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- PVE/PVP Rules -->
+            <div class="rule-category">
+                <div class="category-header" onclick="toggleCategory(this)">
+                    <h2>PVE/PVP</h2>
+                    <i class="fas fa-chevron-down"></i>
+                </div>
+                <div class="category-content">
+                    <div id="no-rdm" class="rule-card">
+                        <div class="rule-header">
+                            <h2 class="rule-title">RDM</h2>
+                            <div class="rule-actions">
+                                <button class="copy-link" title="Copy link to rule" onclick="copyLink('no-rdm')">
+                                    <i class="fas fa-link"></i>
+                                </button>
+                                <button class="copy-text" title="Copy rule text" onclick="copyText(this)">
+                                    <i class="fas fa-copy"></i>
+                                </button>
+                            </div>
+                        </div>
+                        <div class="rule-description">
+                            Killing other players without a valid reason is prohibited. Roleplay interactions must be meaningful.
+                        </div>
+                    </div>
+
+                    <div id="no-teamkilling" class="rule-card">
+                        <div class="rule-header">
+                            <h2 class="rule-title">Teamkilling</h2>
+                            <div class="rule-actions">
+                                <button class="copy-link" title="Copy link to rule" onclick="copyLink('no-teamkilling')">
+                                    <i class="fas fa-link"></i>
+                                </button>
+                                <button class="copy-text" title="Copy rule text" onclick="copyText(this)">
+                                    <i class="fas fa-copy"></i>
+                                </button>
+                            </div>
+                        </div>
+                        <div class="rule-description">
+                            Do not kill your teammates.
+                        </div>
+                    </div>
+
+                    <div id="no-revenge" class="rule-card">
+                        <div class="rule-header">
+                            <h2 class="rule-title">Revenge RDM</h2>
+                            <div class="rule-actions">
+                                <button class="copy-link" title="Copy link to rule" onclick="copyLink('no-revenge')">
+                                    <i class="fas fa-link"></i>
+                                </button>
+                                <button class="copy-text" title="Copy rule text" onclick="copyText(this)">
+                                    <i class="fas fa-copy"></i>
+                                </button>
+                            </div>
+                        </div>
+                        <div class="rule-description">
+                            If you are RDM'd, do not attempt to RDM the player back. Report it to an admin.
+                        </div>
+                    </div>
+
+                    <div id="no-metagaming" class="rule-card">
+                        <div class="rule-header">
+                            <h2 class="rule-title">Metagaming</h2>
+                            <div class="rule-actions">
+                                <button class="copy-link" title="Copy link to rule" onclick="copyLink('no-metagaming')">
+                                    <i class="fas fa-link"></i>
+                                </button>
+                                <button class="copy-text" title="Copy rule text" onclick="copyText(this)">
+                                    <i class="fas fa-copy"></i>
+                                </button>
+                            </div>
+                        </div>
+                        <div class="rule-description">
+                            Do not use knowledge gained from out-of-character sources (Private Voice-chats/Direct Messages) to influence your in-game decisions.
+                        </div>
+                    </div>
+
+                    <div id="pve-advantage" class="rule-card">
+                        <div class="rule-header">
+                            <h2 class="rule-title">PVE Advantage</h2>
+                            <div class="rule-actions">
+                                <button class="copy-link" title="Copy link to rule" onclick="copyLink('pve-advantage')">
+                                    <i class="fas fa-link"></i>
+                                </button>
+                                <button class="copy-text" title="Copy rule text" onclick="copyText(this)">
+                                    <i class="fas fa-copy"></i>
+                                </button>
+                            </div>
+                        </div>
+                        <div class="rule-description">
+                            You may not use PVE mode to gain, or provide another player(s) any form of advantage in PVP.
+                        </div>
+                    </div>
+
+                    <div id="playermodel-restrictions" class="rule-card">
+                        <div class="rule-header">
+                            <h2 class="rule-title">Playermodel Restrictions</h2>
+                            <div class="rule-actions">
+                                <button class="copy-link" title="Copy link to rule" onclick="copyLink('playermodel-restrictions')">
+                                    <i class="fas fa-link"></i>
+                                </button>
+                                <button class="copy-text" title="Copy rule text" onclick="copyText(this)">
+                                    <i class="fas fa-copy"></i>
+                                </button>
+                            </div>
+                        </div>
+                        <div class="rule-description">
+                            In PVP, equipping a smaller than average playermodel while in pvp mode is not allowed, same goes for playermodels that look normal but have smaller than usual hitboxes. If you are in PVE mode you are exempt from this rule.
+                        </div>
+                    </div>
+
+                    <div id="map-boundaries" class="rule-card">
+                        <div class="rule-header">
+                            <h2 class="rule-title">Map Boundaries</h2>
+                            <div class="rule-actions">
+                                <button class="copy-link" title="Copy link to rule" onclick="copyLink('map-boundaries')">
+                                    <i class="fas fa-link"></i>
+                                </button>
+                                <button class="copy-text" title="Copy rule text" onclick="copyText(this)">
+                                    <i class="fas fa-copy"></i>
+                                </button>
+                            </div>
+                        </div>
+                        <div class="rule-description">
+                            Attacking players from outside the map or inside a space that isn't accessible is not allowed.
+                        </div>
+                    </div>
+
+                    <div id="pve-killing" class="rule-card">
+                        <div class="rule-header">
+                            <h2 class="rule-title">PVE Killing</h2>
+                            <div class="rule-actions">
+                                <button class="copy-link" title="Copy link to rule" onclick="copyLink('pve-killing')">
+                                    <i class="fas fa-link"></i>
+                                </button>
+                                <button class="copy-text" title="Copy rule text" onclick="copyText(this)">
+                                    <i class="fas fa-copy"></i>
+                                </button>
+                            </div>
+                        </div>
+                        <div class="rule-description">
+                            While in PVE mode you are not allowed to kill other players in any way.
+                        </div>
+                    </div>
+
+                    <div id="pve-blocking" class="rule-card">
+                        <div class="rule-header">
+                            <h2 class="rule-title">PVE Blocking</h2>
+                            <div class="rule-actions">
+                                <button class="copy-link" title="Copy link to rule" onclick="copyLink('pve-blocking')">
+                                    <i class="fas fa-link"></i>
+                                </button>
+                                <button class="copy-text" title="Copy rule text" onclick="copyText(this)">
+                                    <i class="fas fa-copy"></i>
+                                </button>
+                            </div>
+                        </div>
+                        <div class="rule-description">
+                            Do not use PVE mode to body block entries or areas.
+                        </div>
+                    </div>
+
+                    <div id="pve-base-respect" class="rule-card">
+                        <div class="rule-header">
+                            <h2 class="rule-title">PVE Base Respect</h2>
+                            <div class="rule-actions">
+                                <button class="copy-link" title="Copy link to rule" onclick="copyLink('pve-base-respect')">
+                                    <i class="fas fa-link"></i>
+                                </button>
+                                <button class="copy-text" title="Copy rule text" onclick="copyText(this)">
+                                    <i class="fas fa-copy"></i>
+                                </button>
+                            </div>
+                        </div>
+                        <div class="rule-description">
+                            While in PVE mode, you must leave a PVP player's base if they ask you to.
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Basing Rules -->
+            <div class="rule-category">
+                <div class="category-header" onclick="toggleCategory(this)">
+                    <h2>Basing</h2>
+                    <i class="fas fa-chevron-down"></i>
+                </div>
+                <div class="category-content">
+                    <div id="stay-inbounds" class="rule-card">
+                        <div class="rule-header">
+                            <h2 class="rule-title">Stay Inbounds</h2>
+                            <div class="rule-actions">
+                                <button class="copy-link" title="Copy link to rule" onclick="copyLink('stay-inbounds')">
+                                    <i class="fas fa-link"></i>
+                                </button>
+                                <button class="copy-text" title="Copy rule text" onclick="copyText(this)">
+                                    <i class="fas fa-copy"></i>
+                                </button>
+                            </div>
+                        </div>
+                        <div class="rule-description">
+                            Do not abuse mechanics to get out of bounds on maps.
+                        </div>
+                    </div>
+
+                    <div id="keypad-access" class="rule-card">
+                        <div class="rule-header">
+                            <h2 class="rule-title">Keypad Access</h2>
+                            <div class="rule-actions">
+                                <button class="copy-link" title="Copy link to rule" onclick="copyLink('keypad-access')">
+                                    <i class="fas fa-link"></i>
+                                </button>
+                                <button class="copy-text" title="Copy rule text" onclick="copyText(this)">
+                                    <i class="fas fa-copy"></i>
+                                </button>
+                            </div>
+                        </div>
+                        <div class="rule-description">
+                            In PVP, doors must have an easily accessible and visible keypad or button within close proximity for entering.
+                        </div>
+                    </div>
+
+                    <div id="keypad-restrictions" class="rule-card">
+                        <div class="rule-header">
+                            <h2 class="rule-title">Keypad Restrictions</h2>
+                            <div class="rule-actions">
+                                <button class="copy-link" title="Copy link to rule" onclick="copyLink('keypad-restrictions')">
+                                    <i class="fas fa-link"></i>
+                                </button>
+                                <button class="copy-text" title="Copy rule text" onclick="copyText(this)">
+                                    <i class="fas fa-copy"></i>
+                                </button>
+                            </div>
+                        </div>
+                        <div class="rule-description">
+                            In PVP, you are not allowed to use keypads to disorient a raider (eg. multiple keypads for 1 door).
+                        </div>
+                    </div>
+
+                    <div id="prop-blocking" class="rule-card">
+                        <div class="rule-header">
+                            <h2 class="rule-title">Prop Blocking</h2>
+                            <div class="rule-actions">
+                                <button class="copy-link" title="Copy link to rule" onclick="copyLink('prop-blocking')">
+                                    <i class="fas fa-link"></i>
+                                </button>
+                                <button class="copy-text" title="Copy rule text" onclick="copyText(this)">
+                                    <i class="fas fa-copy"></i>
+                                </button>
+                            </div>
+                        </div>
+                        <div class="rule-description">
+                            Using props to block off areas without keypads is not allowed. If you are in PVE mode you are exempt from this rule.
+                        </div>
+                    </div>
+
+                    <div id="pve-base-shooting" class="rule-card">
+                        <div class="rule-header">
+                            <h2 class="rule-title">PVE Base Shooting</h2>
+                            <div class="rule-actions">
+                                <button class="copy-link" title="Copy link to rule" onclick="copyLink('pve-base-shooting')">
+                                    <i class="fas fa-link"></i>
+                                </button>
+                                <button class="copy-text" title="Copy rule text" onclick="copyText(this)">
+                                    <i class="fas fa-copy"></i>
+                                </button>
+                            </div>
+                        </div>
+                        <div class="rule-description">
+                            If you have a base in PVE you cannot let PVP players shoot out of it.
+                        </div>
+                    </div>
+
+                    <div id="base-accessibility" class="rule-card">
+                        <div class="rule-header">
+                            <h2 class="rule-title">Base Accessibility</h2>
+                            <div class="rule-actions">
+                                <button class="copy-link" title="Copy link to rule" onclick="copyLink('base-accessibility')">
+                                    <i class="fas fa-link"></i>
+                                </button>
+                                <button class="copy-text" title="Copy rule text" onclick="copyText(this)">
+                                    <i class="fas fa-copy"></i>
+                                </button>
+                            </div>
+                        </div>
+                        <div class="rule-description">
+                            Bases must be completely enterable without crouching/obstruction.
+                        </div>
+                    </div>
+
+                    <div id="door-limits" class="rule-card">
+                        <div class="rule-header">
+                            <h2 class="rule-title">Door Limits</h2>
+                            <div class="rule-actions">
+                                <button class="copy-link" title="Copy link to rule" onclick="copyLink('door-limits')">
+                                    <i class="fas fa-link"></i>
+                                </button>
+                                <button class="copy-text" title="Copy rule text" onclick="copyText(this)">
+                                    <i class="fas fa-copy"></i>
+                                </button>
+                            </div>
+                        </div>
+                        <div class="rule-description">
+                            Bases can have a maximum of 4 doors per entrance.
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Wiremod/E2/Starfall/Contraptions Rules -->
+            <div class="rule-category">
+                <div class="category-header" onclick="toggleCategory(this)">
+                    <h2>Wiremod/E2/Starfall/Contraptions</h2>
+                    <i class="fas fa-chevron-down"></i>
+                </div>
+                <div class="category-content">
+                    <div id="no-exploiting" class="rule-card">
+                        <div class="rule-header">
+                            <h2 class="rule-title">Exploiting/Cheating</h2>
+                            <div class="rule-actions">
+                                <button class="copy-link" title="Copy link to rule" onclick="copyLink('no-exploiting')">
+                                    <i class="fas fa-link"></i>
+                                </button>
+                                <button class="copy-text" title="Copy rule text" onclick="copyText(this)">
+                                    <i class="fas fa-copy"></i>
+                                </button>
+                            </div>
+                        </div>
+                        <div class="rule-description">
+                            Do not exploit bugs or glitches in the game. Report any issues to the server admins instead.
+                        </div>
+                    </div>
+
+                    <div id="malicious-intent" class="rule-card">
+                        <div class="rule-header">
+                            <h2 class="rule-title">Malicious Intent</h2>
+                            <div class="rule-actions">
+                                <button class="copy-link" title="Copy link to rule" onclick="copyLink('malicious-intent')">
+                                    <i class="fas fa-link"></i>
+                                </button>
+                                <button class="copy-text" title="Copy rule text" onclick="copyText(this)">
+                                    <i class="fas fa-copy"></i>
+                                </button>
+                            </div>
+                        </div>
+                        <div class="rule-description">
+                            If you wouldn't fight it, don't use it! Anything built for malicious intent is not allowed.
+                        </div>
+                    </div>
+
+                    <div id="zombie-contraptions" class="rule-card">
+                        <div class="rule-header">
+                            <h2 class="rule-title">Zombie Contraptions</h2>
+                            <div class="rule-actions">
+                                <button class="copy-link" title="Copy link to rule" onclick="copyLink('zombie-contraptions')">
+                                    <i class="fas fa-link"></i>
+                                </button>
+                                <button class="copy-text" title="Copy rule text" onclick="copyText(this)">
+                                    <i class="fas fa-copy"></i>
+                                </button>
+                            </div>
+                        </div>
+                        <div class="rule-description">
+                            Contraptions designed to automatically kill zombies in a large radius are not allowed. You are exempt from this rule if you are base building.
+                        </div>
+                    </div>
+
+                    <div id="contraption-health" class="rule-card">
+                        <div class="rule-header">
+                            <h2 class="rule-title">Contraption Health</h2>
+                            <div class="rule-actions">
+                                <button class="copy-link" title="Copy link to rule" onclick="copyLink('contraption-health')">
+                                    <i class="fas fa-link"></i>
+                                </button>
+                                <button class="copy-text" title="Copy rule text" onclick="copyText(this)">
+                                    <i class="fas fa-copy"></i>
+                                </button>
+                            </div>
+                        </div>
+                        <div class="rule-description">
+                            If the intentions of the contraption is to fight with it you MUST have contraption health core present on the contraption. (see the construction tools section)
+                        </div>
+                    </div>
+
+                    <div id="contraption-power" class="rule-card">
+                        <div class="rule-header">
+                            <h2 class="rule-title">Contraption Power</h2>
+                            <div class="rule-actions">
+                                <button class="copy-link" title="Copy link to rule" onclick="copyLink('contraption-power')">
+                                    <i class="fas fa-link"></i>
+                                </button>
+                                <button class="copy-text" title="Copy rule text" onclick="copyText(this)">
+                                    <i class="fas fa-copy"></i>
+                                </button>
+                            </div>
+                        </div>
+                        <div class="rule-description">
+                            Contraptions should be equal in power to their Glide counterparts.
+                        </div>
+                    </div>
+
+                    <div id="drone-restrictions" class="rule-card">
+                        <div class="rule-header">
+                            <h2 class="rule-title">Drone Restrictions</h2>
+                            <div class="rule-actions">
+                                <button class="copy-link" title="Copy link to rule" onclick="copyLink('drone-restrictions')">
+                                    <i class="fas fa-link"></i>
+                                </button>
+                                <button class="copy-text" title="Copy rule text" onclick="copyText(this)">
+                                    <i class="fas fa-copy"></i>
+                                </button>
+                            </div>
+                        </div>
+                        <div class="rule-description">
+                            Drone contraptions are not allowed. You can use our counterparts in the entities tab or the !shop.
+                        </div>
+                    </div>
+
+                    <div id="player-targeting" class="rule-card">
+                        <div class="rule-header">
+                            <h2 class="rule-title">Player Targeting</h2>
+                            <div class="rule-actions">
+                                <button class="copy-link" title="Copy link to rule" onclick="copyLink('player-targeting')">
+                                    <i class="fas fa-link"></i>
+                                </button>
+                                <button class="copy-text" title="Copy rule text" onclick="copyText(this)">
+                                    <i class="fas fa-copy"></i>
+                                </button>
+                            </div>
+                        </div>
+                        <div class="rule-description">
+                            Player targeting is not allowed. Using radars, Tracking Turrets, commands, or anything related is not allowed. This also includes player blinders and teleportation jails.
+                        </div>
+                    </div>
+
+                    <div id="optimization" class="rule-card">
+                        <div class="rule-header">
+                            <h2 class="rule-title">Optimization</h2>
+                            <div class="rule-actions">
+                                <button class="copy-link" title="Copy link to rule" onclick="copyLink('optimization')">
+                                    <i class="fas fa-link"></i>
+                                </button>
+                                <button class="copy-text" title="Copy rule text" onclick="copyText(this)">
+                                    <i class="fas fa-copy"></i>
+                                </button>
+                            </div>
+                        </div>
+                        <div class="rule-description">
+                            Builds and contraptions must be optimized: paste without constraints, Prop2Mesh it, or rebuild it to be simpler. If your build degrades server or client performance, it will be deleted.
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="disclaimer">
+                <p>Failure to adhere to these rules may result in warnings, temporary bans, or permanent bans at the discretion of the admins. If you have doubts about saying or doing something, chances are that it's not allowed.</p>
+                <p class="ownership">Proudly owned and operated by ZMOD.GG</p>
+            </div>
+        </div>
+    </div>
+
+    <script src="js/rules.js"></script>
+</body>
+</html> 
