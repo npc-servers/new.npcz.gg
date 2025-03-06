@@ -1,10 +1,9 @@
-// Toggle category dropdown
+// Toggle category dropdown with simpler animation
 function toggleCategory(header) {
     const content = header.nextElementSibling;
-    const isActive = header.classList.contains('active');
     
     // Close all other categories
-    document.querySelectorAll('.category-header.active').forEach(activeHeader => {
+    document.querySelectorAll('.category-header.active').forEach(function(activeHeader) {
         if (activeHeader !== header) {
             activeHeader.classList.remove('active');
             activeHeader.nextElementSibling.classList.remove('active');
@@ -15,65 +14,109 @@ function toggleCategory(header) {
     header.classList.toggle('active');
     content.classList.toggle('active');
     
-    // Scroll into view if opening
-    if (!isActive) {
-        setTimeout(() => {
-            header.scrollIntoView({ behavior: 'smooth', block: 'nearest' });
-        }, 100);
+    // Basic scroll into view for older browsers
+    if (header.classList.contains('active')) {
+        try {
+            header.scrollIntoView(true);
+        } catch (e) {
+            // Fallback for very old browsers
+            window.scrollTo(0, header.offsetTop);
+        }
     }
 }
 
-// Copy link to rule
+// Copy link to rule with compatibility check
 function copyLink(ruleId) {
     const url = window.location.href.split('#')[0] + '#' + ruleId;
-    navigator.clipboard.writeText(url).then(() => {
-        const button = document.querySelector(`#${ruleId} .copy-link`);
-        addClickAnimation(button);
-        showNotification('Link copied to clipboard!');
-    });
+    
+    // Check if clipboard API is supported
+    if (navigator.clipboard && navigator.clipboard.writeText) {
+        navigator.clipboard.writeText(url).then(function() {
+            const button = document.querySelector('#' + ruleId + ' .copy-link');
+            addClickAnimation(button);
+            showNotification('Link copied to clipboard!');
+        }).catch(function() {
+            // Fallback for clipboard API failure
+            fallbackCopy(url);
+        });
+    } else {
+        // Fallback for older browsers
+        fallbackCopy(url);
+    }
 }
 
-// Copy rule text
+// Copy rule text with compatibility check
 function copyText(button) {
     const ruleCard = button.closest('.rule-card');
     const description = ruleCard.querySelector('.rule-description').textContent;
-    navigator.clipboard.writeText(description).then(() => {
-        addClickAnimation(button);
-        showNotification('Rule text copied to clipboard!');
-    });
+    
+    // Check if clipboard API is supported
+    if (navigator.clipboard && navigator.clipboard.writeText) {
+        navigator.clipboard.writeText(description).then(function() {
+            addClickAnimation(button);
+            showNotification('Rule text copied to clipboard!');
+        }).catch(function() {
+            // Fallback for clipboard API failure
+            fallbackCopy(description);
+        });
+    } else {
+        // Fallback for older browsers
+        fallbackCopy(description);
+    }
 }
 
-// Helper function to copy text to clipboard
-function copyToClipboard(text) {
-    var textarea = document.createElement('textarea');
-    textarea.value = text;
-    textarea.style.position = 'fixed';
-    textarea.style.opacity = '0';
-    document.body.appendChild(textarea);
+// Fallback copy function for older browsers
+function fallbackCopy(text) {
+    const textArea = document.createElement('textarea');
+    textArea.value = text;
+    textArea.style.position = 'fixed';
+    textArea.style.left = '-9999px';
+    document.body.appendChild(textArea);
+    textArea.select();
     
-    textarea.select();
     try {
         document.execCommand('copy');
+        showNotification('Copied to clipboard!');
     } catch (err) {
-        console.error('Failed to copy text:', err);
+        showNotification('Failed to copy. Press Ctrl+C to copy manually.');
     }
     
-    document.body.removeChild(textarea);
+    document.body.removeChild(textArea);
 }
 
-// Show toast message
-function showToast(message) {
-    var toast = document.createElement('div');
-    toast.className = 'toast';
-    toast.textContent = message;
-    document.body.appendChild(toast);
+// Show notification with basic animation
+function showNotification(message) {
+    const notification = document.createElement('div');
+    notification.className = 'copy-notification';
+    notification.textContent = message;
+    document.body.appendChild(notification);
     
+    // Force reflow
+    notification.offsetHeight;
+    
+    // Show notification
+    notification.classList.add('show');
+    
+    // Hide and remove after delay
     setTimeout(function() {
-        document.body.removeChild(toast);
-    }, 3000);
+        notification.classList.remove('show');
+        setTimeout(function() {
+            document.body.removeChild(notification);
+        }, 300);
+    }, 2000);
 }
 
-// Handle hash links
+// Simple click animation
+function addClickAnimation(button) {
+    if (button) {
+        button.classList.add('clicked');
+        setTimeout(function() {
+            button.classList.remove('clicked');
+        }, 300);
+    }
+}
+
+// Handle hash links with basic scroll
 function handleHash() {
     var hash = window.location.hash;
     if (hash) {
@@ -84,16 +127,20 @@ function handleHash() {
             if (category) {
                 var header = category.querySelector('.category-header');
                 toggleCategory(header);
-                // Smooth scroll with delay to ensure animation completes
-                setTimeout(function() {
-                    ruleElement.scrollIntoView({ behavior: 'smooth', block: 'center' });
-                }, 300);
+                
+                // Basic scroll for older browsers
+                try {
+                    ruleElement.scrollIntoView(true);
+                } catch (e) {
+                    // Fallback for very old browsers
+                    window.scrollTo(0, ruleElement.offsetTop);
+                }
             }
         }
     }
 }
 
-// Initialize
+// Initialize with basic feature detection
 window.onload = function() {
     // Open first category by default
     var firstHeader = document.querySelector('.category-header');
@@ -103,6 +150,15 @@ window.onload = function() {
     
     // Handle hash links
     handleHash();
+    
+    // Basic initialization without modern features
+    document.querySelectorAll('.rule-card').forEach(function(card) {
+        card.addEventListener('click', function(e) {
+            if (!e.target.closest('.rule-actions')) {
+                this.classList.toggle('expanded');
+            }
+        });
+    });
 };
 
 // Handle hash changes
@@ -158,28 +214,4 @@ function initRules() {
 }
 
 // Initialize when DOM is loaded
-document.addEventListener('DOMContentLoaded', initRules);
-
-function createNotification() {
-    const notification = document.createElement('div');
-    notification.className = 'copy-notification';
-    document.body.appendChild(notification);
-    return notification;
-}
-
-const notification = createNotification();
-
-function showNotification(message) {
-    notification.textContent = message;
-    notification.classList.add('show');
-    setTimeout(() => {
-        notification.classList.remove('show');
-    }, 2000);
-}
-
-function addClickAnimation(button) {
-    button.classList.add('clicked');
-    setTimeout(() => {
-        button.classList.remove('clicked');
-    }, 300);
-} 
+document.addEventListener('DOMContentLoaded', initRules); 
