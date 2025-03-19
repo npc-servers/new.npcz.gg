@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+    <link rel="stylesheet" href="./css/main.css">
+    <link rel="stylesheet" href="./css/changes.css">
+    <link rel="stylesheet" href="./css/tips.css">
+    <link href="https://fonts.googleapis.com/css2?family=Kanit:wght@500&display=swap" rel="stylesheet">
+  </head>
+  <body>
+    <div class="background"></div>
+    <div class="overhaul"></div>
+
+    <nav>
+      <div id="announcement"></div>
+      <span id="map">You're playing on </span>
+      <span id="steamid"></span>
+      <div class="powered-by">
+        <span class="powered-text">POWERED BY</span>
+        <a href="https://zmod.gg" target="_blank" class="zmod-link">
+          <span class="zmod-logo"></span>
+          <span>ZMOD.GG</span>
+        </a>
+      </div>
+    </nav>
+
+    <!-- Changes Tab -->
+    <div class="changes-tab">
+      <h3 class="changes-header">Server Updates</h3>
+      <div class="changes-container">
+        <!-- Changes content will be populated by JavaScript -->
+      </div>
+    </div>
+
+    <!-- Other Servers Tab -->
+    <div class="servers-tab">
+      <h3 class="servers-header">Other Servers</h3>
+      <div class="servers-container">
+        <div class="servers-grid">
+          <!-- Server boxes will be populated by JavaScript -->
+        </div>
+      </div>
+    </div>
+
+    <main>
+      <div class="title">
+        <h2>Welcome to,</h2>
+        <h1 id="title"></h1>
+        <div id="history"></div>
+      </div>
+    </main>
+
+    <!-- Tip Container -->
+    <div class="tip-container">
+      <h4 class="tip-heading">Tip</h4>
+      <p class="tip-content">Loading tip...</p>
+    </div>
+
+    <script src="./js/config.js"></script>
+    <script src="./js/main.js"></script>
+    <script src="./js/changes.js"></script>
+    <script src="./js/servers.js"></script>
+    <script src="./js/tips.js"></script>
+    <script>
+        const possibleBackgrounds = [
+            "images/zbox1.jpg",
+            "images/zbox2.jpg"
+        ]
+        let currentBackground = 0;
+
+        function changeBackground() {
+            const div = document.querySelector('.background');
+
+            currentBackground = ++currentBackground;
+            if (currentBackground >= possibleBackgrounds.length) {
+                currentBackground = 0;
+            }
+
+            div.style.backgroundImage = `url('${possibleBackgrounds[currentBackground]}')`;
+        }
+
+        setInterval(changeBackground, 3000);
+    </script>
+  </body>
+</html>

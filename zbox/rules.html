@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>ZBox Rules</title>
+    <meta name="viewport" content="width=device-width">
+    <meta name="description" content="NPC redirect page">
+    <meta content="ZBox Rules" property="og:title" />
+    <meta content="The ruleset for the ZBox Server." property="og:description" />
+    <meta content="https://npcz.gg/assets/logos/logo.png" property="og:image" />
+    <meta content="#FF0000" data-react-helmet="true" name="theme-color" />
+    <meta name="viewport" content="width=device-width">
+
+    <link href="/css/sandbox/rules.css" rel="stylesheet">
+</head>
+
+<body>
+    <div class="rules">
+        <header class="rules-header">
+            <h1 class="server-name">ZBox</h1>
+            <h2 class="description">SERVER GUIDELINES</h2>
+        </header>
+
+        <div class="rules-box">
+            <button class="collapsible">1. COMMON SENSE</button>
+            <div class="content rules-content">
+                <ol>
+                    <li>Do not harass/intentionally annoy other players.</li>
+                    <li>Mic Spamming/earraping is not allowed.</li>
+                    <li>We are an english speaking server, so keep all-chat in english. You can use other languages in PMs/Near/Squads.</li>
+                    <li>Modifying your game to provide an unfair advantage (cheating/exploiting) is against the rules.</li>
+                    <li>Intentionally lagging/crashing the server is not allowed.</li>
+                    <li>Threatening or attempting to dox/DDoS other players will result in a permanent ban.</li>
+                    <li>NSFW Content is not allowed.</li>
+                    <li>Do not engage in/use offensive behavior or language.</li>
+                    <li>Do not break rules because someone else is breaking them; you will also be punished.</li>
+                </ol>
+            </div>
+        </div>
+
+        <div class="rules-box">
+
+        <button class="collapsible">2. PROP ABUSE</button>
+            <div class="content rules-content">
+                <ol>
+                    <li>Do not excessively proppush/propkill.</li>
+                    <li>Do not prop spam, doing this may result in a ban without warning!</li>
+                    <li>Blocking off large parts of the map, including spawnpoints, is not allowed.</li>
+                    <li>Do not build in the skybox.</li>
+                    <li>Do not spawn props/entities in or on a player's build/base without permission.</li>
+                </ol>
+            </div>
+        </div>
+
+        <div class="rules-box">
+            <button class="collapsible">3. WIREMOD/E2/STARFALL/CONTRAPTIONS</button>
+            <div class="content rules-content">
+                <ol>
+                    <li>If you wouldn't fight it, do not use it! Anything built for malicious intent is not allowed.</li>
+                </ol>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        var coll = document.getElementsByClassName("collapsible");
+        var i;
+
+        for (i = 0; i < coll.length; i++) {
+            coll[i].addEventListener("click", function () {
+                this.classList.toggle("active");
+                var content = this.nextElementSibling;
+                if (content.style.maxHeight) {
+                    content.style.maxHeight = null;
+                } else {
+                    content.style.maxHeight = content.scrollHeight + "px";
+                }
+            });
+        }
+    </script>
+</body>
+
+</html>

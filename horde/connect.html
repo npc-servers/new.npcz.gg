@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Connecting to Horde...</title>
+    <meta http-equiv="refresh" content="0; url=steam://connect/193.243.190.18:27065">
+    <link href="https://fonts.googleapis.com/css2?family=Prompt:wght@400;500;600;700&family=Space+Grotesk:wght@400;500;600&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="../css/redirect.css">
+</head>
+<body>
+    <div class="redirect-message">
+        <h1 class="connect-title">Connecting to Horde</h1>
+        <p>Steam should open automatically to connect you to the server.</p>
+        <p>If it doesn't work, <a href="steam://connect/193.243.190.18:27065">click here</a> to try again.</p>
+        <p><span class="server-ip" onclick="copyIP(this)">193.243.190.18:27065</span></p>
+    </div>
+    <script>
+        function copyIP(element) {
+            const ip = element.textContent;
+            navigator.clipboard.writeText(ip).then(() => {
+                element.classList.add('copy-success');
+                setTimeout(() => {
+                    element.classList.remove('copy-success');
+                }, 2000);
+            });
+        }
+    </script>
+</body>
+</html> 

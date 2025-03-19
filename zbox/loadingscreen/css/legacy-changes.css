@@ -1,0 +1,274 @@
+/* Tabs styling */
+.changes-tab, .servers-tab {
+  position: fixed;
+  top: 45%; /* Changed from 40% to 45% for slightly lower position */
+  margin-top: -200px; /* Half the average height to center vertically */
+  background-color: rgb(0, 0, 0);
+  background-color: rgba(0, 0, 0, 0.75);
+  filter: progid:DXImageTransform.Microsoft.gradient(startColorstr=#BF000000,endColorstr=#BF000000); /* IE */
+  zoom: 1;
+  border: 1px solid #1a1a1a;
+  padding: 10px;
+  z-index: 10;
+  width: 280px;
+  max-height: 70%;
+  overflow-y: auto;
+}
+
+/* Changes tab specific styles */
+.changes-tab {
+  left: 0;
+  border-radius: 0 8px 8px 0;
+  border-left: none;
+}
+
+/* Servers tab specific styles */
+.servers-tab {
+  right: 0;
+  border-radius: 8px 0 0 8px;
+  border-right: none;
+}
+
+.changes-container, .servers-container {
+  padding: 10px 0 20px 0;
+}
+
+.changes-header, .servers-header {
+  font-family: 'Kanit', sans-serif;
+  text-align: left;
+  margin: 0;
+  padding-bottom: 8px;
+  font-size: 1.4em;
+  color: #ffffff;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+  text-shadow: 0 2px 4px #000000;
+  position: relative;
+  padding-left: 30px; /* Make space for logo */
+  line-height: 26px; /* Match height of logo */
+}
+
+/* Add logos to headers using pseudo-elements */
+.changes-header:before, .servers-header:before {
+  content: "";
+  position: absolute;
+  left: 0;
+  top: 0;
+  width: 24px;
+  height: 24px;
+  background-image: url('../../../assets/zbox_logo.png');
+  background-size: contain;
+  background-repeat: no-repeat;
+  background-position: center;
+}
+
+/* Changes content */
+.changes-main {
+  margin-bottom: 15px;
+  padding: 10px;
+  background-color: rgb(0, 0, 0);
+  background-color: rgba(0, 0, 0, 0.3);
+  filter: progid:DXImageTransform.Microsoft.gradient(startColorstr=#4D000000,endColorstr=#4D000000);
+  zoom: 1;
+  border: 1px solid #1a1a1a;
+  border-radius: 4px;
+}
+
+.changes-title {
+  margin: 0 0 5px 0;
+  font-size: 1.1em;
+  color: #ffffff;
+}
+
+.changes-date {
+  font-size: 0.85em;
+  color: #cccccc;
+  margin-bottom: 8px;
+}
+
+.changes-content {
+  font-size: 0.9em;
+  line-height: 1.4;
+  color: #f0f0f0;
+}
+
+.changes-grid {
+  display: block;
+}
+
+.changes-box {
+  margin-bottom: 10px;
+  padding: 8px;
+  background-color: rgb(0, 0, 0);
+  background-color: rgba(0, 0, 0, 0.2);
+  filter: progid:DXImageTransform.Microsoft.gradient(startColorstr=#33000000,endColorstr=#33000000);
+  zoom: 1;
+  border: 1px solid #1a1a1a;
+  border-radius: 4px;
+}
+
+.changes-box-title {
+  margin: 0 0 5px 0;
+  font-size: 1em;
+  color: #ffffff;
+}
+
+.changes-box-date {
+  font-size: 0.8em;
+  color: #cccccc;
+  margin-bottom: 5px;
+}
+
+.changes-box-content {
+  font-size: 0.85em;
+  line-height: 1.4;
+  color: #f0f0f0;
+}
+
+/* Servers content */
+.servers-grid {
+  margin-top: 10px;
+}
+
+.server-box {
+  margin-bottom: 10px;
+  padding: 8px;
+  background-color: rgb(0, 0, 0);
+  background-color: rgba(0, 0, 0, 0.2);
+  filter: progid:DXImageTransform.Microsoft.gradient(startColorstr=#33000000,endColorstr=#33000000);
+  zoom: 1;
+  border: 1px solid #1a1a1a;
+  border-radius: 4px;
+}
+
+.server-box-title {
+  margin: 0 0 5px 0;
+  font-size: 1em;
+  color: #ffffff;
+}
+
+.server-box-players {
+  font-size: 0.8em;
+  color: #cccccc;
+  margin-bottom: 5px;
+}
+
+.server-box-content {
+  font-size: 0.85em;
+  line-height: 1.4;
+  color: #f0f0f0;
+}
+
+.server-box.server-offline {
+  opacity: 0.7;
+  -ms-filter: "progid:DXImageTransform.Microsoft.Alpha(Opacity=70)";
+  filter: alpha(opacity=70);
+}
+
+.server-box.server-error {
+  opacity: 0.7;
+  -ms-filter: "progid:DXImageTransform.Microsoft.Alpha(Opacity=70)";
+  filter: alpha(opacity=70);
+}
+
+/* Message boxes */
+.more-servers-message {
+  margin-top: 10px;
+  padding: 8px 12px;
+  font-size: 0.9em;
+  text-align: center;
+  color: #ffffff;
+  background-color: rgb(0, 0, 0);
+  background-color: rgba(0, 0, 0, 0.25);
+  filter: progid:DXImageTransform.Microsoft.gradient(startColorstr=#40000000,endColorstr=#40000000);
+  zoom: 1;
+  border-radius: 6px;
+  border: 1px solid #1a1a1a;
+  opacity: 0.9;
+  -ms-filter: "progid:DXImageTransform.Microsoft.Alpha(Opacity=90)";
+  filter: alpha(opacity=90);
+}
+
+.server-link {
+  color: #e60000;
+  text-decoration: none;
+  font-weight: 600;
+  position: relative;
+  text-shadow: 0 1px 1px #000000;
+}
+
+.changes-discord-message {
+  margin-top: 10px;
+  padding: 8px 12px;
+  font-size: 0.9em;
+  text-align: center;
+  color: #ffffff;
+  background-color: rgb(0, 0, 0);
+  background-color: rgba(0, 0, 0, 0.25);
+  filter: progid:DXImageTransform.Microsoft.gradient(startColorstr=#40000000,endColorstr=#40000000);
+  zoom: 1;
+  border-radius: 6px;
+  border: 1px solid #1a1a1a;
+  opacity: 0.9;
+  -ms-filter: "progid:DXImageTransform.Microsoft.Alpha(Opacity=90)";
+  filter: alpha(opacity=90);
+}
+
+.discord-link {
+  color: #5865F2;
+  text-decoration: none;
+  font-weight: 600;
+  position: relative;
+  text-shadow: 0 1px 1px #000000;
+}
+
+/* Responsive design for smaller screens */
+@media screen and (max-width: 768px) {
+  .changes-tab, .servers-tab {
+    width: 230px;
+    top: 50px;
+  }
+  
+  .changes-header, .servers-header {
+    font-size: 1.2em;
+  }
+  
+  .changes-title, .server-box-title {
+    font-size: 0.95em;
+  }
+  
+  .changes-content, .server-box-content {
+    font-size: 0.8em;
+  }
+  
+  .more-servers-message, .changes-discord-message {
+    font-size: 0.8em;
+    padding: 6px 10px;
+  }
+}
+
+@media screen and (max-width: 480px) {
+  .changes-tab, .servers-tab {
+    width: 180px;
+    top: 40px;
+    max-height: 60%;
+  }
+  
+  .changes-header, .servers-header {
+    font-size: 1.1em;
+  }
+  
+  .changes-title, .server-box-title {
+    font-size: 0.9em;
+  }
+  
+  .changes-content, .server-box-content {
+    font-size: 0.7em;
+  }
+  
+  .more-servers-message, .changes-discord-message {
+    font-size: 0.7em;
+    padding: 5px 8px;
+  }
+} 

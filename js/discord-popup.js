@@ -31,10 +31,10 @@ function showDiscordPopup() {
                 </div>
                 <h2 class="discord-popup-title">JOIN OUR DISCORD!</h2>
                 <div class="discord-popup-content">
-                    <p>Connect with our community, get the latest updates, and join the conversation about NPC Zombies!</p>
+                    <p>Connect with our community, get the latest updates, and join our other servers!</p>
                 </div>
             </div>
-            <a href="https://discord.gg/npcz" class="discord-popup-btn" target="_blank">
+            <a href="https://discord.gg/npc" class="discord-popup-btn" target="_blank">
                 <i class="fab fa-discord"></i> JOIN DISCORD
             </a>
         </div>

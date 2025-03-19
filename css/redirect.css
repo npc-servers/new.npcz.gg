@@ -1,0 +1,15 @@
+:root{--primary-color:#ff6600;--secondary-color:#333333;--text-color:#ffffff;--body-font:'Prompt',Arial,sans-serif;--title-font:'Space Grotesk', 'Arial Black', sans-serif;--mono-font:'Space Grotesk',monospace}
+body{font-family:var(--body-font);background:#1a1a1a;background:linear-gradient(rgba(0,0,0,0.3),rgba(0,0,0,0.4)),url('../assets/images/staticbg.jpg'),#1a1a1a;background-size:cover;background-position:center;background-attachment:fixed;color:var(--text-color);display:flex;justify-content:center;align-items:center;height:100vh;margin:0;text-align:center}
+.redirect-message{padding:20px;background-color:rgba(25,25,25,0.8);border:1px solid rgba(255,255,255,0.1);border-radius:8px;transition:transform 0.3s ease,border-color 0.3s ease,box-shadow 0.3s ease}
+.redirect-message:hover{transform:translateY(-3px);border-color:var(--primary-color);box-shadow:0 5px 15px rgba(255,102,0,0.2)}
+h1{font-family:var(--title-font);font-size:2.5rem;margin-bottom:1rem;text-transform:uppercase;letter-spacing:2px;text-shadow:0 2px 4px rgba(0,0,0,0.5)}
+.connect-title{font-family:var(--mono-font);font-weight:600;letter-spacing:2px}
+a{color:var(--primary-color);text-decoration:none;transition:color 0.3s ease}
+a:hover{color:#ff8533;text-decoration:none}
+.server-ip{font-family:var(--mono-font);font-size:1.1rem;background:rgba(0,0,0,0.3);padding:0.5rem 1rem;border-radius:4px;border-left:3px solid var(--primary-color);display:inline-flex;align-items:center;margin-top:0.5rem;cursor:pointer;transition:background-color 0.2s ease}
+.server-ip:hover{background-color:rgba(0,0,0,0.5)}
+.server-ip::after{content:'Click to copy';font-size:0.75rem;color:#aaa;margin-left:1rem;font-family:var(--body-font);transition:color 0.2s ease}
+.server-ip:hover::after{color:#fff}
+.server-ip.copy-success{background-color:rgba(255,102,0,0.15);border-left-color:var(--primary-color)}
+.server-ip.copy-success::after{content:'Copied!';color:var(--primary-color)}
+@media(max-width:768px){h1{font-size:2rem}.redirect-message{margin:0 1rem}.server-ip{font-size:1rem}.server-ip::after{font-size:0.7rem;margin-left:0.75rem}} 

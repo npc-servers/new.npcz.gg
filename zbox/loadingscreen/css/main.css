@@ -1,0 +1,147 @@
+body {
+  font-family: "Kanit", sans-serif, "Arial";
+  font-weight: 500;
+  margin: 0;
+  color: white;
+  background-color: black;
+}
+
+nav,
+main {
+  display: none;
+}
+
+nav {
+  background-color: rgba(0, 0, 0, 0.5);
+  padding: 0.5% 1%;
+  height: 30px;
+  line-height: 30px;
+  overflow: auto;
+  backdrop-filter: blur(4px);
+  -webkit-backdrop-filter: blur(4px);
+  border-bottom: 1px solid var(--card-border, rgba(255, 255, 255, 0.1));
+  position: relative;
+  display: none;
+  opacity: 0;
+  transition: opacity 0.5s ease;
+}
+
+/* Powered by styles */
+.powered-by {
+  position: absolute;
+  right: 1%;
+  top: 0;
+  height: 30px;
+  display: flex;
+  align-items: center;
+  font-size: 0.75em;
+  font-weight: 500;
+  letter-spacing: 0.5px;
+}
+
+.powered-text {
+  opacity: 0.7;
+  margin-right: 5px;
+}
+
+.zmod-link {
+  display: flex;
+  align-items: center;
+  color: #ffffff;
+  text-decoration: none;
+  font-weight: 600;
+}
+
+.zmod-logo {
+  width: 16px;
+  height: 16px;
+  margin-right: 4px;
+  background-image: url('../../../assets/zmod_logo.png');
+  background-size: contain;
+  background-position: center;
+  background-repeat: no-repeat;
+  display: inline-block;
+}
+
+/* Media queries for responsive design */
+@media (max-width: 768px) {
+  .powered-by {
+    font-size: 0.7em;
+  }
+  
+  .zmod-logo {
+    width: 14px;
+    height: 14px;
+  }
+}
+
+@media (max-width: 480px) {
+  .powered-text {
+    display: none; /* Hide "POWERED BY" text on small screens */
+  }
+  
+  .zmod-logo {
+    width: 12px;
+    height: 12px;
+  }
+}
+
+h2 {
+  font-size: 1.5em;
+  color: rgb(250, 250, 250);
+  margin: 0;
+}
+h1 {
+  margin-top: 10px;
+}
+#title,
+#map,
+#steamid {
+  display: none;
+}
+#steamid {
+  float: right;
+  line-height: 30px;
+}
+#map {
+  line-height: 30px;
+}
+#announcement {
+  position: absolute;
+  width: 98%;
+  text-align: center;
+  line-height: 30px;
+}
+#history {
+  position: absolute;
+  text-align: center;
+  width: 100%;
+  color: rgb(240, 240, 240);
+  text-shadow: none;
+}
+.background {
+  z-index: -2;
+  width: 100%;
+  height: 100%;
+  position: fixed;
+  background-image: url("../images/zbox1.jpg");
+  transition: background 0.5s linear;
+  -webkit-transition: background 1.5s linear;
+  background-repeat: no-repeat;
+  background-size: cover;
+}
+.overhaul {
+  z-index: -1;
+  width: 100%;
+  height: 100%;
+  position: fixed;
+  background-color: rgba(0, 0, 0, 0.4);
+  transition-duration: 1s;
+}
+.title {
+  text-align: center;
+  top: 40%;
+  width: 100%;
+  position: absolute;
+  text-shadow: 1px 1px 1px rgba(0, 0, 0, 0.8);
+}

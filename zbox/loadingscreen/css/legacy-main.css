@@ -1,0 +1,168 @@
+body {
+  font-family: "Kanit", sans-serif, "Arial";
+  font-weight: 500;
+  margin: 0;
+  color: white;
+  background-color: black;
+}
+
+.nav,
+.main {
+  display: block;
+}
+
+.nav {
+  background-color: rgb(0, 0, 0);
+  background-color: rgba(0, 0, 0, 0.5);
+  filter: progid:DXImageTransform.Microsoft.gradient(startColorstr=#80000000,endColorstr=#80000000); /* IE */
+  zoom: 1;
+  padding: 5px 10px;
+  height: 30px;
+  line-height: 30px;
+  overflow: auto;
+  border-bottom: 1px solid #1a1a1a;
+  position: relative;
+  opacity: 1;
+  -ms-filter: "progid:DXImageTransform.Microsoft.Alpha(Opacity=100)";
+  filter: alpha(opacity=100);
+  z-index: 100;
+}
+
+/* Powered by styles */
+.powered-by {
+  position: absolute;
+  right: 10px;
+  top: 0;
+  height: 30px;
+  font-size: 0.75em;
+  font-weight: 500;
+  letter-spacing: 0.5px;
+}
+
+.powered-text {
+  opacity: 0.7;
+  -ms-filter: "progid:DXImageTransform.Microsoft.Alpha(Opacity=70)";
+  filter: alpha(opacity=70);
+  margin-right: 5px;
+  float: left;
+}
+
+.zmod-link {
+  color: #ffffff;
+  text-decoration: none;
+  font-weight: 600;
+  float: left;
+}
+
+.zmod-logo {
+  width: 16px;
+  height: 16px;
+  margin-right: 4px;
+  /* Fallback for older browsers that can't handle the image */
+  background-color: #e60000;
+  /* Try to load the image if possible */
+  background-image: url('../../../assets/zmod_logo.png');
+  background-position: center;
+  background-repeat: no-repeat;
+  display: inline-block;
+  float: left;
+  border-radius: 3px;
+}
+
+.zmod-link span {
+  float: left;
+  line-height: 30px;
+}
+
+h2 {
+  font-size: 1.5em;
+  color: rgb(250, 250, 250);
+  margin: 0;
+}
+h1 {
+  margin-top: 10px;
+}
+#title,
+#map,
+#steamid {
+  /* Changed from 'display: none' to allow visibility when needed */
+  display: block;
+  opacity: 0;
+  -ms-filter: "progid:DXImageTransform.Microsoft.Alpha(Opacity=0)";
+  filter: alpha(opacity=0);
+}
+#steamid {
+  float: right;
+  line-height: 30px;
+}
+#map {
+  line-height: 30px;
+  margin-left: 10px;
+}
+#announcement {
+  position: absolute;
+  width: 98%;
+  text-align: center;
+  line-height: 30px;
+  /* Make sure it's seen */
+  opacity: 1;
+  -ms-filter: "progid:DXImageTransform.Microsoft.Alpha(Opacity=100)";
+  filter: alpha(opacity=100);
+}
+#history {
+  position: absolute;
+  text-align: center;
+  width: 100%;
+  color: rgb(240, 240, 240);
+  text-shadow: none;
+}
+.background {
+  z-index: -2;
+  width: 100%;
+  height: 100%;
+  position: fixed;
+  background-image: url("../images/zbox1.jpg");
+  background-repeat: no-repeat;
+  background-size: cover;
+}
+.overhaul {
+  z-index: -1;
+  width: 100%;
+  height: 100%;
+  position: fixed;
+  background-color: rgb(0, 0, 0);
+  background-color: rgba(0, 0, 0, 0.4);
+  filter: progid:DXImageTransform.Microsoft.gradient(startColorstr=#66000000,endColorstr=#66000000);
+  zoom: 1;
+}
+.title {
+  text-align: center;
+  top: 40%;
+  width: 100%;
+  position: absolute;
+  text-shadow: 1px 1px 1px #000000;
+}
+
+/* For screens smaller than 769px */
+@media screen and (max-width: 768px) {
+  .powered-by {
+    font-size: 0.7em;
+  }
+  
+  .zmod-logo {
+    width: 14px;
+    height: 14px;
+  }
+}
+
+/* For screens smaller than 481px */
+@media screen and (max-width: 480px) {
+  .powered-text {
+    display: none; /* Hide "POWERED BY" text on small screens */
+  }
+  
+  .zmod-logo {
+    width: 12px;
+    height: 12px;
+  }
+} 
